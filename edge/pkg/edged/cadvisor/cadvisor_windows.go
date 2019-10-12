@@ -22,6 +22,7 @@ import (
 	"github.com/google/cadvisor/events"
 	cadvisorapi "github.com/google/cadvisor/info/v1"
 	cadvisorapiv2 "github.com/google/cadvisor/info/v2"
+	"k8s.io/klog"
 	"k8s.io/kubernetes/pkg/kubelet/cadvisor"
 	"k8s.io/kubernetes/pkg/kubelet/winstats"
 )
@@ -74,6 +75,7 @@ func (cu *cadvisorClient) ImagesFsInfo() (cadvisorapiv2.FsInfo, error) {
 }
 
 func (cu *cadvisorClient) RootFsInfo() (cadvisorapiv2.FsInfo, error) {
+	klog.Info(" root path is " + cu.rootPath)
 	return cu.GetDirFsInfo(cu.rootPath)
 }
 

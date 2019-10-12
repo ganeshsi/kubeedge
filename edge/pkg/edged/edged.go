@@ -513,7 +513,7 @@ func newEdged() (*edged, error) {
 	}
 
 	//create and start the docker shim running as a grpc server
-	if conf.remoteRuntimeEndpoint == DockerShimEndpoint || conf.remoteRuntimeEndpoint == DockerShimEndpointDeprecated {
+	if true {
 		streamingConfig := &streaming.Config{}
 		DockerClientConfig := &dockershim.ClientConfig{
 			DockerEndpoint:            conf.DockerAddress,
@@ -594,7 +594,7 @@ func newEdged() (*edged, error) {
 		return nil, fmt.Errorf("New generic runtime manager failed, err: %s", err.Error())
 	}
 
-	cadvisorInterface, err := cadvisor.New("")
+	cadvisorInterface, err := cadvisor.New("C:/kubeedge/data")
 	containerManager, err := cm.NewContainerManager(mount.New(""),
 		cadvisorInterface,
 		cm.NodeConfig{

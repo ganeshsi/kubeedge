@@ -7,7 +7,7 @@ import (
 	"k8s.io/klog"
 )
 
-const inter = "docker0"
+const inter = "nat"
 
 // getIP returns the specific interface ip of version 4
 func getIP() (net.IP, error) {

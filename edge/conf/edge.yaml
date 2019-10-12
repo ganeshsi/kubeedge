@@ -30,8 +30,8 @@ edgehub:
 
 edged:
     register-node-namespace: default
-    hostname-override: edge-node
-    interface-name: eth0
+    hostname-override: edgenode1
+    interface-name: nat
     edged-memory-capacity-bytes: 7852396000
     node-status-update-frequency: 10 # second
     device-plugin-enabled: false
@@ -41,8 +41,8 @@ edged:
     maximum-dead-containers-per-container: 1
     docker-address: tcp://localhost:2375
     runtime-type: docker
-    remote-runtime-endpoint: tcp://localhost:2375
-    remote-image-endpoint: tcp://localhost:2375
+    remote-runtime-endpoint: tcp://localhost:2376
+    remote-image-endpoint: tcp://localhost:2376
     runtime-request-timeout: 2
     podsandbox-image: kubeedge/pause:3.1 # kubeedge/pause:3.1 for x86 arch , kubeedge/pause-arm:3.1 for arm arch, kubeedge/pause-arm64 for arm64 arch
     image-pull-progress-deadline: 60 # second
